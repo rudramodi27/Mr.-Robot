@@ -232,8 +232,8 @@ Since nmap is running with SUID root privileges, the spawned shell inherits root
 ``` whoami```
 - This command verifies the current user.
 The output confirms root-level access.
-📌 Output:
-> root
+- 📌 Output:
+- > root
 - 🏁 Phase 9: Final Flag
 ```
 cd /root

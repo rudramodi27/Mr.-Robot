@@ -6,13 +6,13 @@
 > - Network: Host-Only Adapter
 > - Purpose: Educational / Lab-based penetration testing only
 
-* 🔍 Phase 1 : Network Discovery
+# 🔍 Phase 1 : Network Discovery
  - **1️⃣ Find target IP**
 ```
 ip a
 ```
 - This command is used to list all network interfaces and IP addresses on the attacker machine.
-* 🔍 Phase 2 : Network Discovery
+# 🔍 Phase 2 : Network Discovery
 ```
 sudo netdiscover -i eth1 -r 194.168.x.x
 ```

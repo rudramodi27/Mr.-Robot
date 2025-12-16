@@ -196,7 +196,7 @@ The previously cracked password is used for authentication.
 - This command confirms the current user context.
 The output shows the session is now running as robot.
 - 📌 Output:
-```robot```
+- ```robot```
 - 🏳️ Flag 2 Capture
 ```
 cat key-2-of-3.txt

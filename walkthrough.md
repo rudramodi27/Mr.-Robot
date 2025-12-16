@@ -229,7 +229,7 @@ nmap --interactive
 - This command is executed inside Nmap interactive mode to spawn a system shell.
 Since nmap is running with SUID root privileges, the spawned shell inherits root access, leading to full privilege escalation.
 - 3️⃣ Root confirmation
-``` whoami```
+- ``` whoami```
 - This command verifies the current user.
 The output confirms root-level access.
 - 📌 Output:

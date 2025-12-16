@@ -52,4 +52,4 @@ All testing was performed on a deliberately vulnerable machine in a lab setup.
 # ✍️ Author
 
 > Rudra Modi
-Aspiring Cybersecurity & Penetration Testing Professional
+- Aspiring Cybersecurity & Penetration Testing Professional

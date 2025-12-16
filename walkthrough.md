@@ -6,13 +6,13 @@
 > - Network: Host-Only Adapter
 > - Purpose: Educational / Lab-based penetration testing only
 
- * <ins>🔍 Phase 1 </ins> : Network Discovery
-  **1️⃣ Find target IP**
+* 🔍 Phase 1 : Network Discovery
+ - **1️⃣ Find target IP**
 ```
 ip a
 ```
 - This command is used to list all network interfaces and IP addresses on the attacker machine.
-* <ins>🔍 Phase 2</ins> : Network Discovery
+* 🔍 Phase 2 : Network Discovery
 ```
 sudo netdiscover -i eth1 -r 194.168.x.x
 ```
@@ -30,7 +30,7 @@ nmap -sS -sV -p- -n 192.168.x.x
 ```
 - The -n option disables DNS resolution to avoid DNS-related warnings.
 This makes the scan faster and more reliable in lab environments.
-* <ins>🌐 Phase 3</ins> : Web Enumeration
+* 🌐 Phase 3 : Web Enumeration
 * **robots.txt check**
 ```  
 http://192.168.x.x/robots.txt

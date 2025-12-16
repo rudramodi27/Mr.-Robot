@@ -1,16 +1,16 @@
-* <ins>🔍 Phase 1: Network Discovery</ins>
+* <ins>🔍 Phase 1 </ins> : Network Discovery
   **Find target IP**
 ```
 ip a
 ```
 - This command is used to list all network interfaces and IP addresses on the attacker machine.
-* <ins>🔍 Phase 2: Network Discovery</ins>
+* <ins>🔍 Phase 2</ins> : Network Discovery
 ```
 sudo netdiscover -i eth1 -r 194.168.x.x
 ```
 - This command performs an ARP scan for network discovery using the eth1 interface.
 It is used to identify live hosts and discover the target machine’s IP address.
-* <ins>🌐 Phase 3: Port Scanning</ins>
+* <ins>🌐 Phase 3 </ins> : Port Scanning
 ```
 nmap -sS -sV -p- 192.168.x.x 
 ```
@@ -22,8 +22,8 @@ nmap -sS -sV -p- -n 192.168.x.x
 ```
 - The -n option disables DNS resolution to avoid DNS-related warnings.
 This makes the scan faster and more reliable in lab environments.
-* <ins>🌐 Phase 3: Web Enumeration</ins>
-**robots.txt check**
+* <ins>🌐 Phase 3</ins> : Web Enumeration
+* **robots.txt check**
 ```  
 http://192.168.x.x/robots.txt
 ```

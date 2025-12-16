@@ -30,7 +30,7 @@ nmap -sS -sV -p- -n 192.168.x.x
 ```
 - The -n option disables DNS resolution to avoid DNS-related warnings.
 This makes the scan faster and more reliable in lab environments.
-* 🌐 Phase 3 : Web Enumeration
+# 🌐 Phase 4 : Web Enumeration
 * **robots.txt check**
 ```  
 http://192.168.x.x/robots.txt

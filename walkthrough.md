@@ -1,5 +1,5 @@
 * 🔍 Phase 1: Network Discovery
-1️⃣ Find target IP
+  **Find target IP**
 ```
 ip a
 ```
@@ -16,9 +16,26 @@ nmap -sS -sV -p- 192.168.x.x
 ```
 - This command performs a TCP SYN scan on all ports of the target system.
 It identifies open ports and detects the services and versions running on them.
-**⚠️ DNS Warning Fix**
+-   b**⚠️ DNS Warning Fix**
 ```
-nmap -sS -sV -p- -n 192.168.194.7
+nmap -sS -sV -p- -n 192.168.x.x
 ```
 - The -n option disables DNS resolution to avoid DNS-related warnings.
 This makes the scan faster and more reliable in lab environments.
+* 🌐 Phase 3: Web Enumeration
+**robots.txt check**
+```  
+http://192.168.x.x/robots.txt
+```
+
+**📌 Output:**
+![1_3olegJiczAZe014yYac-JQ](https://github.com/user-attachments/assets/70966e8c-9e90-4ac5-abce-e5f5d06e5d7c)
+- **🏳️ Flag 1 Capture**
+```
+curl http://192.168.xx.x/key-1-of-3.txt
+```
+
+**✅ Flag-1:**
+
+07x403c8a58a1xx0d943455fbx0x724b9
+

@@ -245,4 +245,4 @@ cat key-3-of-3.txt
 - This command reads the final flag, confirming successful root compromise.
 - ✅ Flag-3:
 
-04787ddef27c3dxe1ee1x1x216x0x4e4
+> 04787ddef27c3dxe1ee1x1x216x0x4e4

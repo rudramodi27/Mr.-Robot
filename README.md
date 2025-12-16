@@ -3,7 +3,7 @@
 - This repository documents my complete walkthrough of the Mr Robot vulnerable machine from VulnHub, solved using a structured penetration testing methodology.
 - The goal of this lab was to practice web enumeration, exploitation, and privilege escalation in a controlled environment.
 
-* ⚠️ Disclaimer
+ **⚠️ Disclaimer**
 - This project is for educational purposes only.
 All testing was performed on a deliberately vulnerable machine in a lab setup.
 

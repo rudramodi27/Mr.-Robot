@@ -1,10 +1,10 @@
 # 🛡️ Mr Robot VulnHub — Complete Walkthrough (Commands Used)
 
 > Environment
-> Attacker: Kali Linux
-> Target: Mr Robot (VulnHub)
-> Network: Host-Only Adapter
-> Purpose: Educational / Lab-based penetration testing only
+> - Attacker: Kali Linux
+> - Target: Mr Robot (VulnHub)
+> - Network: Host-Only Adapter
+> - Purpose: Educational / Lab-based penetration testing only
 
  * <ins>🔍 Phase 1 </ins> : Network Discovery
   **1️⃣ Find target IP**

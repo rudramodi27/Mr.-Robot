@@ -83,7 +83,7 @@ http://192.168.194.7/wp-login.php
 ```
 - This URL is used to directly access the WordPress login page of the target website.
 It allows manual verification of valid usernames discovered during brute-force attacks.
-**Alternative Method (Using Terminal)**
+# **Alternative Method (Using Terminal)**
 ```
 firefox http://192.168.194.7/wp-login.php &
 ```

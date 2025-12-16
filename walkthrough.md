@@ -18,7 +18,7 @@ sudo netdiscover -i eth1 -r 194.168.x.x
 ```
 - This command performs an ARP scan for network discovery using the eth1 interface.
 It is used to identify live hosts and discover the target machine’s IP address.
-* 🌐 Phase 3 : Port Scanning
+# 🌐 Phase 3 : Port Scanning
 ```
 nmap -sS -sV -p- 192.168.x.x 
 ```

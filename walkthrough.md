@@ -1,6 +1,6 @@
 # 🛡️ Mr Robot VulnHub — Complete Walkthrough (Commands Used)
 
-> Environment
+> - Environment
 > - Attacker: Kali Linux
 > - Target: Mr Robot (VulnHub)
 > - Network: Host-Only Adapter
